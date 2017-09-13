@@ -1,0 +1,22 @@
+{
+  "name": "33",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bson": "^1.0.4",
+    "bson-ext": "^1.0.5",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "mongodb": "^2.2.31",
+    "mongodb-proxy": "^1.0.45",
+    "mongoose": "^4.11.10",
+    "util": "^0.10.3"
+  }
+}
