@@ -26,9 +26,29 @@ Below you will find information what you have to do to be able to use this RestA
    mongod.exe - run it in command line to launch mongoBb server
    mongo.exe - run it in command line to launch mongoDb client
    
-4. To be able to maintain mnogoDb database and see what is going on in much more convinient way, install Robo 3T from 
+4. To be able to maintain mongoDb database and see what is going on in much more convinient way, install Robo 3T from 
    https://robomongo.org/ .
    
+5. Create Database and User with appriopriate settings and privilages.
+
+   # run mongo client
+   # create new database:
+     
+     use NAME_OF_THE_NEW_DATABASE
+   
+   # create collection
+   
+      db.createCollection("NAME_OF_THE_COLLECTION")
+     
+   # create user
+     
+     db.createUser(
+         {
+           user: "test_user",
+           pwd: "test_password",
+           roles: [ "readWrite"]
+         }
+      )
    
    
 
