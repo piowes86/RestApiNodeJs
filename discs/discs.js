@@ -29,72 +29,72 @@ var schema = new mongoose.Schema({
     barcode: [String]
 });
 
-var DiskResult = mongoose.model(`${COLLECTION_NAME}`, schema);
+var DiscResult = mongoose.model(`${COLLECTION_NAME}`, schema);
 
-function addDisk(diskData, cb) {
+function addDisc(discData, cb) {
 
-    var diskResult = new DiskResult(diskData);
+    var discResult = new DiscResult(discData);
 
-    diskResult.save(function(err, diskResult) {
-
-        if(err) {
-            cb(err);
-        } else {
-            cb(null, diskResult);
-        }
-    });
-}
-
-function getDisk(id, cb) {
-
-    DiskResult.findById(id).exec(function(err, diskResult) {
+    discResult.save(function(err, discResult) {
 
         if(err) {
             cb(err);
         } else {
-            cb(null, diskResult);
+            cb(null, discResult);
+        }
+    });
+}
+
+function getDisc(id, cb) {
+
+    DiscResult.findById(id).exec(function(err, discResult) {
+
+        if(err) {
+            cb(err);
+        } else {
+            cb(null, discResult);
         }
     });
 
 }
 
-function updateDisk(diskData, cb) {
+function updateDisc(discData, cb) {
 
-    var paramId = diskData.paramId;
-    delete diskData.paramId;
+    var paramId = discData.paramId;
+    delete discData.paramId;
         
-    DiskResult.findOneAndUpdate({_id: paramId}, diskData, function(err, disk){
+    DiscResult.findOneAndUpdate({_id: paramId}, discData, function(err, disc){
 
         if(err) {
             cb(err);
         } else {
-            cb(null, disk);
+            cb(null, disc);
         }
     });
 
 }
 
-function deleteDisk(id, cb) {
+function deleteDisc(id, cb) {
 
-    DiskResult.findByIdAndRemove(id).exec(function(err, diskData) {
+    DiscResult.findByIdAndRemove(id).exec(function(err, discData) {
         
         if(err) {
             cb(err);
         } else {
-            cb(null, diskData);
+            cb(null, discData);
         }
     });
 
 }
 
-function listDisks(cb) {
+function listDiscs(cb) {
 
-    DiskResult.find({}).exec(function(err, disks){
+    DiscResult.find({}).exec(function(err, discs){
 
         if(err) {
             cb(err);
         } else {
-            cb(null, disks);
+            cb(null, discs);
         }
 
     });
@@ -102,9 +102,9 @@ function listDisks(cb) {
 }
 
 module.exports = {
-    add: addDisk,
-    get: getDisk,
-    update: updateDisk,
-    delete: deleteDisk,
-    list: listDisks
+    add: addDisc,
+    get: getDisc,
+    update: updateDisc,
+    delete: deleteDisc,
+    list: listDiscs
 };

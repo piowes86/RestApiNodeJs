@@ -1,11 +1,11 @@
 const express = require("express");
-const disks = require("../disks");
+const discs = require("../discs");
 
 const router = express.Router();
 
-router.get("/disks", function(req, res) {
+router.get("/discs", function(req, res) {
 
-    disks.list(function(err, data){
+    discs.list(function(err, data){
         if(err) {
             res.status(404);
             res.json({
@@ -18,9 +18,9 @@ router.get("/disks", function(req, res) {
 
 });
 
-router.post("/disks", function(req, res) {
+router.post("/discs", function(req, res) {
 
-    disks.add(req.body, function(err, data){
+    discs.add(req.body, function(err, data){
 
         if(err) {
              res.status(404);
@@ -35,9 +35,9 @@ router.post("/disks", function(req, res) {
 
 });
 
-router.get("/disk/:id", function(req, res) {
+router.get("/disc/:id", function(req, res) {
 
-    disks.get(req.params.id, function(err, data) {
+    discs.get(req.params.id, function(err, data) {
 
         if(err) {
             res.status(404);
@@ -52,11 +52,11 @@ router.get("/disk/:id", function(req, res) {
 
 });
 
-router.put("/disk/:id", function(req, res) {
+router.put("/disc/:id", function(req, res) {
 
     req.body.paramId = req.params.id;
 
-    disks.update(req.body, function(err, data) {
+    discs.update(req.body, function(err, data) {
 
         if(err) {
             res.status(404);
@@ -71,9 +71,9 @@ router.put("/disk/:id", function(req, res) {
 
 });
 
-router.delete("/disk/:id", function(req, res) {
+router.delete("/disc/:id", function(req, res) {
 
-    disks.delete(req.params.id, function(err, data) {
+    discs.delete(req.params.id, function(err, data) {
 
         if(err) {
             res.status(404);
