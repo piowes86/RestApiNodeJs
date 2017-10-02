@@ -21,7 +21,7 @@ NodeJS & NPM installation -> https://nodejs.org/en/download/
    npm install
    In this way you will install all necessary libraries to run the project. There you will se new folder node_modules.
    When all necessary modules are downloaded the project is almost ready to run with command: node index . Before you have to yet
-   provide correct connection data in disks.js file. Please continue to get know how to do that.
+   provide correct connection data in discs.js file. Please continue to get know how to do that.
    
 2. Install MongoDB https://www.mongodb.com/download-center#enterprise . After installation you will see that new folder in 
    C:\Program Files\MongoDB has appeared. Inside it you will find in localisation C:\Program Files\MongoDB\Server\3.4\bin two files:
@@ -131,24 +131,24 @@ NodeJS & NPM installation -> https://nodejs.org/en/download/
         - Install postman within Google Chrome webbrowser. After you install it, you can check if webservice is working correctly.
         - Below you will find basic CRUD operations you can fire directly from Postman:
       
-          POST -> http://localhost:8080/api/disks -> Allow to save new entity into database
+          POST -> http://localhost:8080/api/discs -> Allow to save new entity into database
           
                   - Inside Postman in Headers insert: Key/Value Content-Type application/json 
                   - In Body section provide valid JSON object you want to store in database
                   
-          GET  -> http://localhost:8080/api/disks -> Allow to get list of all stored entities in database
+          GET  -> http://localhost:8080/api/discs -> Allow to get list of all stored entities in database
                   
                   - Inside Postman in Headers insert: Key/Value Content-Type application/json 
           
-          GET  -> http://localhost:8080/api/disk/_id -> Allow to get information about specified entity. _id parameter you will find in 
+          GET  -> http://localhost:8080/api/disc/_id -> Allow to get information about specified entity. _id parameter you will find in 
                                                         Postman response after run GET query.
                                            
                   - Inside Postman in Headers insert: Key/Value Content-Type application/json 
                   
-          PUT  -> http://localhost:8080/api/disk/_id -> Allow to update information about specified entity. _id parameter you will find
+          PUT  -> http://localhost:8080/api/disc/_id -> Allow to update information about specified entity. _id parameter you will find
                                                         in Postman response after run GET query.
                                                         
                   - Inside Postman in Headers insert: Key/Value Content-Type application/json 
                   - In Body section provide valid JSON object you want to store in database
                   
-          DELETE -> http://localhost:8080/api/disk/_id -> Allow to remove the specified entity from the database.
+          DELETE -> http://localhost:8080/api/disc/_id -> Allow to remove the specified entity from the database.
